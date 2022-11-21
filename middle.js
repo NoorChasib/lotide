@@ -71,18 +71,17 @@ const middle = function(fullArr) {
     if (arrInside % 2 === 0) {
       const evenNumPos = (Math.round(arrInside / 2));
       const leftNumPos = evenNumPos - 1;
-      const evenNum = `[${fullArr[leftNumPos]}, ${fullArr[evenNumPos]}]`;
+      const evenNum = [fullArr[leftNumPos], fullArr[evenNumPos]];
       return evenNum;
     } else {
       const oddNumPos = (Math.round(arrInside / 2 - 1));
-      const oddNum = `[${fullArr[oddNumPos]}]`;
+      const oddNum = [fullArr[oddNumPos]];
       return oddNum;
     }
   } else {
-    return '[]';
+    return;
   }
 };
 
-console.log(middle([1, 2, 3, 4]));
-console.log(middle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]));
-console.log(middle([1, 3, 9, 10, 15, 16, 18, 35, 16]));
+module.exports = middle;
+
