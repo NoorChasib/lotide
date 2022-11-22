@@ -8,10 +8,12 @@ const letterPositions = function(sentence) {
     }
     if (!results[letter]) {
       results[letter] = [i];
-    }
-    else (results[letter].push(i));
+    } else (results[letter].push(i));
   }
   return results;
 };
 
 console.log(letterPositions('hello world'));
+
+
+module.exports = letterPositions;

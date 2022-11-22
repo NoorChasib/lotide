@@ -1,31 +1,5 @@
-const assertEqual = function(actual, expected) {
-  if (actual !== expected) {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  } else if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  }
-};
-assertEqual('Lighthouse Labs', 'Bootcamp');
-assertEqual(1, 1);
-
-
-const eqArrays = function(array1, array2) {
-  if (array1.length !== array2.length) {
-    // console.log("Arrays not equal length")
-    return false;
-  }
-  for (let i = 0; i < array1.length; i++) {
-    if (Array.isArray(array1[i]) && (eqArrays(array1[i], array2[i]) === false)) {
-      // if it is an array && the arrays are not equal then return false;
-      return false;
-    }
-    if (!(Array.isArray(array1[i])) && array1[i] !== array2[i]) {
-      // if the element is not an array and the items are not equal then return false
-      return false;
-    }
-  }
-  return true;
-};
+const assertEqual = require('./assertEqual');
+const eqArrays = require('./eqArrays');
 
 const eqObjects = function(object1, object2) {
   let keys1 = Object.keys(object1);
@@ -60,3 +34,6 @@ assertEqual(eqObjects(cd, dc), true); // => true
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
 assertEqual(eqObjects(cd, cd2), false); // => false
+
+
+module.exports = eqObjects;

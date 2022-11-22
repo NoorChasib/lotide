@@ -1,13 +1,5 @@
-const assertEqual = function(actual, expected) {
-  if (actual !== expected) {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  } else if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
 
-// assertEqual('Lighthouse Labs', 'Bootcamp');
-// assertEqual(1, 1);
 
 
 const findKey = function(array, callback) {
@@ -30,3 +22,6 @@ const data = (findKey({
 
 
 assertEqual(data, 'noma');
+
+
+module.exports = findKey;
